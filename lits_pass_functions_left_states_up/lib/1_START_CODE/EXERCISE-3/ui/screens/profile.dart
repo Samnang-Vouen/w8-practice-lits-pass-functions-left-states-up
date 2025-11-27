@@ -44,13 +44,8 @@ class ProfileApp extends StatelessWidget {
             ),
             const SizedBox(height: 20),
 
-            ...profileData.tiles.map((tile) {
-              return ProfileTile(
-                icon: tile.icon,
-                title: tile.title,
-                data: tile.value,
-              );
-            }),
+            for (var tile in profileData.tiles)
+              ProfileTile(icon: tile.icon, title: tile.title, data: tile.value),
           ],
         ),
       ),
